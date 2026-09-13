@@ -55,35 +55,36 @@ struct ContentView: View {
 
     func calculateAverage() {
         // CODE BEFORE INTRODUCING OPTIONALS
-        average = Double((kimchiRating+hankkiRating+kostopRating)/3)
+//        let sum = (Int(kimchiRating)!+Int(hankkiRating)!+Int(kostopRating)!)
+//        average = Double(sum/3)
         
         // BETTER CODE USING OPTIONALS
         
-        //        let jupiter: Int? = Int(jupiterRating)
-        //        let cheeseboard: Int? = Int(cheeseboardRating)
-        //        let artichokes: Int? = Int(artichokesRating)
+        let kimchi: Int? = Int(kimchiRating)
+        let hankki: Int? = Int(hankkiRating)
+        let kostop: Int? = Int(kostopRating)
 
-//        var total = 0
-//        var count = 0
-//
-//        if let rating = kimchi {
-//            total += rating
-//            count += 1
-//        }
-//
-//        if let rating = hankki {
-//            total += rating
-//            count += 1
-//        }
-//
-//        if let rating = kostop {
-//            total += rating
-//            count += 1
-//        }
-//
-//        if count > 0 {
-//            average = Double(total) / Double(count)
-//        }
+        var total = 0
+        var count = 0
+
+        if let rating = kimchi {
+            total += rating
+            count += 1
+        }
+
+        if let rating = hankki {
+            total += rating
+            count += 1
+        }
+
+        if let rating = kostop {
+            total += rating
+            count += 1
+        }
+
+        if count > 0 {
+            average = Double(total) / Double(count)
+        }
     }
 }
 
